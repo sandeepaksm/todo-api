@@ -19,8 +19,8 @@ pipeline {
             steps {
                 echo 'Running tests...'
                 sh '''
-                    pip install -r requirements.txt --break-system-packages
-                    DATABASE_URL=sqlite:///./test.db pytest tests/ -v
+                    python3 -m pip install -r requirements.txt --break-system-packages
+                    DATABASE_URL=sqlite:///./test.db python3 -m pytest tests/ -v
                 '''
             }
         }
